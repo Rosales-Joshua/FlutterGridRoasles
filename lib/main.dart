@@ -1,42 +1,111 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
+        title: 'Flutter App Learning',
+        theme: ThemeData(
+          primarySwatch: Colors.indigo,
+        ),
+        home: MyHomePage());
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
+class MyHomePage extends StatefulWidget {
+  MyHomePage({Key? key}) : super(key: key);
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
 
+class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
+        appBar: AppBar(
+          title: Text("Telcel"),
         ),
-      ),
-    );
+        body: GridView.count(
+          crossAxisCount: 1,
+          children: [
+            Container(
+              color: Colors.indigo,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Image.asset("assets/images/tel.png"),
+                  Text("Decorado", style: TextStyle(color: Color(0xffffffff)))
+                ],
+              ),
+            ),
+            Container(
+              color: Colors.indigo,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Image.asset("assets/images/tele.jpg"),
+                  Text("cwel", style: TextStyle(color: Color(0xffffffff)))
+                ],
+              ),
+            ),
+            Container(
+              color: Colors.indigo,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Image.asset("assets/images/teli.jpg"),
+                  Text("Empleados", style: TextStyle(color: Color(0xffffffff)))
+                ],
+              ),
+            ),
+            Container(
+              color: Colors.indigo,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Image.asset("assets/images/telr.png"),
+                  Text("Entregas", style: TextStyle(color: Color(0xffffffff)))
+                ],
+              ),
+            ),
+            Container(
+              color: Colors.indigo,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Image.asset("assets/images/telt.jpg"),
+                  Text("Decorado", style: TextStyle(color: Color(0xffffffff)))
+                ],
+              ),
+            ),
+            Container(
+              color: Colors.indigo,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Image.asset("assets/images/telu.jpg"),
+                  Text("Decorado", style: TextStyle(color: Color(0xffffffff)))
+                ],
+              ),
+            ),
+            Container(
+              color: Colors.indigo,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Image.asset("assets/images/tely.jpg"),
+                  Text("Decorado", style: TextStyle(color: Color(0xffffffff)))
+                ],
+              ),
+            ),
+          ],
+          mainAxisSpacing: 30,
+          crossAxisSpacing: 10,
+        ));
   }
 }
